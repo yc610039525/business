@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<serviceGroup>    
+   <service name="HelloWorld">    
+      <description>Web Service</description>    
+      <!--   
+	           作用类似于普通配置中的 ServiceClass ，都是用来创建服务类对象，  
+	           只不过普通配置使用反射来创建  
+	           加入Spring之后，对象的创建交给了Spring的IOC容器  
+	   -->  
+      <parameter name="SpringBeanName">HelloWorld</parameter>  
+      <parameter name="ServiceObjectSupplier">
+      org.apache.axis2.extensions.spring.receivers.SpringServletContextObjectSupplier
+      </parameter>    
+       <!--   
+	           在这里最值得注意的是<messageReceivers>元素，该元素用于设置处理WebService方法的处理器。  
+	           例如，getAge方法有一个返回值，因此，需要使用可处理输入输出的RPCMessageReceiver类，  
+	           而update方法没有返回值，因此，需要使用只能处理输入的RPCInOnlyMessageReceiver类。  
+        -->  
+      <messageReceivers>    
+             <messageReceiver 
+             mep="http://www.w3.org/2004/08/wsdl/in-out" 
+             class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />    
+             <messageReceiver 
+             mep="http://www.w3.org/2004/08/wsdl/in-only" 
+             class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />    
+      </messageReceivers>    
+   </service>    
+</serviceGroup>  

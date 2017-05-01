@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="business-web"
+  id="myeclipse.1492345722858"
+  context-root="/business-web"
+  j2ee-spec="6.0"
+  archive="business-web.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+
