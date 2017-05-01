@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books><!--This is a test for dom4j --><book show="yes">
+<title>ajax in action</title>
+</book>书架1</books>
